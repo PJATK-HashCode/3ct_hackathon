@@ -1,9 +1,6 @@
 package dao.service;
 
-import dao.repository.IPlaceRepository;
-import dao.repository.IRateRepository;
-import dao.repository.IRepositoryCatalog;
-import dao.repository.IReservationRepository;
+import dao.repository.*;
 
 /**
  * @author Lelental on 27.05.2017.
@@ -23,5 +20,10 @@ public class RepositoryService implements IRepositoryCatalog {
     @Override
     public IReservationRepository reservations() {
         return new ReservationService();
+    }
+
+    @Override
+    public IUserRepository users() {
+        return new UserService();
     }
 }
