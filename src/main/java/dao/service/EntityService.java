@@ -82,4 +82,22 @@ public class EntityService<Entity> implements IRepository<Entity> {
             session.close();
         }
     }
+
+    @Override
+    public List<Entity> searchByCriteria(String criteria) {
+        List<Entity> list = new ArrayList<>();
+        try {
+            session.getTransaction();
+            session.getTransaction().begin();
+            list = session.createQuery(criteria).list();
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            if (session.getTransaction() != null) {
+                session.getTransaction().rollback();
+            }
+        } finally {
+            session.close();
+        }
+        return list;
+    }
 }
