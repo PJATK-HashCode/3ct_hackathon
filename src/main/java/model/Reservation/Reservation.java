@@ -2,6 +2,7 @@ package model.Reservation;
 
 import lombok.Data;
 import model.User.User;
+import model.place.Place;
 
 /**
  * Created by Kuba on 27.05.2017.
