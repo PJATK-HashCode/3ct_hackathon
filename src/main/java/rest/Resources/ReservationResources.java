@@ -78,9 +78,7 @@ public class ReservationResources {
                 .setParameter("id", id).getSingleResult();
         if (result == null) {
             return Response.status(404).build();
-
         }
-
         return Response.ok(result).build();
     }
 
@@ -92,7 +90,6 @@ public class ReservationResources {
                 .setParameter("id", id)
                 .getSingleResult();
         if (result == null) return Response.status(404).build();
-
         entityManager.remove(result);
         return Response.ok().build();
     }
