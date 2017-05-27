@@ -16,8 +16,8 @@ public class PlaceAmenities {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private boolean hasOwner;
 
+    private boolean hasOwner;
     private boolean hasChaningRoom;
     private boolean hasLightOutSide;
     private boolean hasFreeWater;

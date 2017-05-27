@@ -3,10 +3,7 @@ package model.rateSystem;
 import lombok.Data;
 import model.user.User;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 /**
  * Created by Kuba on 27.05.2017.
@@ -19,6 +16,8 @@ public class Comment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @OneToOne
     private User user;
+
     private String Text;
 }

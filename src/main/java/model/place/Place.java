@@ -15,7 +15,7 @@ import java.util.List;
 @Entity
 @Data
 @NamedQueries({
-        @NamedQuery(name = "place.all", query="select p from place p"),
+        @NamedQuery(name = "place.all", query = "select p from place p"),
         @NamedQuery(name = "place.id", query = "select p from place p where p.id=:placeId")
 })
 public class Place {
@@ -25,7 +25,7 @@ public class Place {
     private long id;
 
     private String Name;
-    private String LocaliztionCoordinates;
+    private String localiztionCoordinates;
     private String Street;
     private String PostCode;
     private String OpenHours;
@@ -36,14 +36,21 @@ public class Place {
     @Enumerated(EnumType.STRING)
     private City city;
 
+    @OneToOne
     private Owner owner;
+
+    @OneToOne
     private PlaceAmenities placeAmenities;
+
     private BigDecimal cost;
 
     @Enumerated(EnumType.STRING)
     private List<TypeOfSport> typeOfSportList;
 
+    @OneToMany
     private List<Term> termList;
+
+    @OneToMany
     private List<Rate> rateList;
 
 

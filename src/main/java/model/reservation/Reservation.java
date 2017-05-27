@@ -17,7 +17,10 @@ public class Reservation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    @OneToOne
     private Place place;
+
+    @OneToOne
     private User user;
 
     @Enumerated(EnumType.STRING)

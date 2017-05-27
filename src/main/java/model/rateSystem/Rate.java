@@ -19,6 +19,7 @@ public class Rate {
     @Enumerated(EnumType.STRING)
     private Score score;
 
+    @OneToOne
     private User user;
 
     @Enumerated(EnumType.STRING)
