@@ -14,7 +14,8 @@ import java.util.List;
 @Entity
 @NamedQueries({
         @NamedQuery(name = "place.all", query = "select p from place p"),
-        @NamedQuery(name = "place.id", query = "select p from place p where p.id=:placeId")
+        @NamedQuery(name = "place.id", query = "select p from place p where p.id=:id"),
+        @NamedQuery(name = "place.city", query ="select p from place p where  p.city=:city")
 })
 public class Place {
 
@@ -23,7 +24,7 @@ public class Place {
     private long id;
 
     private String Name;
-    private String localiztionCoordinates;
+    private String localizationCoordinates;
     private String Street;
     private String PostCode;
     private String OpenHours;
@@ -43,7 +44,7 @@ public class Place {
     private BigDecimal cost;
 
     @Enumerated(EnumType.STRING)
-    private List<TypeOfSport> typeOfSportList;
+    private TypeOfSport typeOfSportList;
 
     @OneToMany
     private List<Term> termList;
@@ -68,12 +69,12 @@ public class Place {
         Name = name;
     }
 
-    public String getLocaliztionCoordinates() {
-        return localiztionCoordinates;
+    public String getLocalizationCoordinates() {
+        return localizationCoordinates;
     }
 
-    public void setLocaliztionCoordinates(String localiztionCoordinates) {
-        this.localiztionCoordinates = localiztionCoordinates;
+    public void setLocalizationCoordinates(String localizationCoordinates) {
+        this.localizationCoordinates = localizationCoordinates;
     }
 
     public String getStreet() {
@@ -140,11 +141,11 @@ public class Place {
         this.cost = cost;
     }
 
-    public List<TypeOfSport> getTypeOfSportList() {
+    public TypeOfSport getTypeOfSportList() {
         return typeOfSportList;
     }
 
-    public void setTypeOfSportList(List<TypeOfSport> typeOfSportList) {
+    public void setTypeOfSportList(TypeOfSport typeOfSportList) {
         this.typeOfSportList = typeOfSportList;
     }
 
