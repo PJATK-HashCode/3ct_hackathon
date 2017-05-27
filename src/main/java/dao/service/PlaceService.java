@@ -17,11 +17,6 @@ public class PlaceService extends EntityService<Place> implements IPlaceReposito
     }
 
     @Override
-    public List<Place> inCity(City city) {
-        return super.searchByCriteria("from Place p where p.city='" + city.name() + "'");
-    }
-
-    @Override
     public List<Place> atStreet(String street) {
         return super.searchByCriteria("from Place p where p.street='" + street + "'");
     }
