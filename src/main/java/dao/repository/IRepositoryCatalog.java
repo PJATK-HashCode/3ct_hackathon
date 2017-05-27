@@ -5,4 +5,7 @@ package dao.repository;
  */
 public interface IRepositoryCatalog {
 
+    IPlaceRepository places();
+    IRateRepository rates();
+    IReservationRepository reservations();
 }

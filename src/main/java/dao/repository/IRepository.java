@@ -14,4 +14,6 @@ public interface IRepository<Entity> {
     void add(Entity entity);
 
     void delete(Entity entity);
+
+    List<Entity> searchByCriteria(String criteria);
 }
