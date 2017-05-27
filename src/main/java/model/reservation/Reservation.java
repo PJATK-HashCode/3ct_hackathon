@@ -1,7 +1,7 @@
-package model.Reservation;
+package model.reservation;
 
 import lombok.Data;
-import model.User.User;
+import model.user.User;
 import model.place.Place;
 
 /**

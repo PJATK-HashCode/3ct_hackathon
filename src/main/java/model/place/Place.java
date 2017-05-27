@@ -1,9 +1,9 @@
 package model.place;
 
 import lombok.Data;
-import model.RateSystem.Rate;
-import model.Reservation.Term;
-import model.User.Owner;
+import model.rateSystem.Rate;
+import model.reservation.Term;
+import model.user.Owner;
 
 import java.math.BigDecimal;
 import java.util.List;

@@ -1,7 +1,7 @@
-package model.RateSystem;
+package model.rateSystem;
 
 import lombok.Data;
-import model.User.User;
+import model.user.User;
 
 /**
  * Created by Kuba on 27.05.2017.

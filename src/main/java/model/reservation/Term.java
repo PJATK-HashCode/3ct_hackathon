@@ -1,4 +1,4 @@
-package model.Reservation;
+package model.reservation;
 
 import lombok.Data;
 import org.joda.time.LocalTime;

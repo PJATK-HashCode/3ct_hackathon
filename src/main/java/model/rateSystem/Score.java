@@ -1,4 +1,4 @@
-package model.RateSystem;
+package model.rateSystem;
 
 /**
  * Created by Kuba on 27.05.2017.

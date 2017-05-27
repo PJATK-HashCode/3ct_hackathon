@@ -1,4 +1,4 @@
-package model.Reservation;
+package model.reservation;
 
 /**
  * Created by Kuba on 27.05.2017.
