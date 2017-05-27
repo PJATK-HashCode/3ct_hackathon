@@ -1,18 +1,24 @@
-package model.place;
+package rest.dto.place;
 
 import lombok.Data;
 import model.RateSystem.Rate;
 import model.Reservation.Term;
 import model.User.Owner;
+import model.place.City;
+import model.place.PlaceAmenities;
+import model.place.PlaceType;
+import model.place.TypeOfSport;
 
+import javax.xml.bind.annotation.XmlRootElement;
 import java.math.BigDecimal;
 import java.util.List;
 
 /**
- * @author Lelental on 27.05.2017.
+ * Created by Kuba on 27.05.2017.
  */
 @Data
-public class Place {
+@XmlRootElement
+public class PlaceDTO {
 
     private String Name;
     private String LocaliztionCoordinates;
@@ -27,6 +33,5 @@ public class Place {
     private List<TypeOfSport> typeOfSportList;
     private List<Term> termList;
     private List<Rate>  rateList;
-
 
 }
