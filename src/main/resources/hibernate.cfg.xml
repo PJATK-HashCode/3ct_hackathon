@@ -20,14 +20,14 @@
         <mapping class="model.place.PlaceAmenities"/>
         <mapping class="model.place.PlaceType"/>
         <mapping class="model.place.TypeOfSport"/>
-        <mapping class="model.RateSystem.Category"/>
-        <mapping class="model.RateSystem.Comment"/>
-        <mapping class="model.RateSystem.Rate"/>
-        <mapping class="model.RateSystem.Score"/>
-        <mapping class="model.Reservation.Reservation"/>
-        <mapping class="model.Reservation.Term"/>
-        <mapping class="model.Reservation.TypeOfPayment"/>
-        <mapping class="model.User.Owner"/>
-        <mapping class="model.User.User"/>
+        <mapping class="model.rateSystem.Category"/>
+        <mapping class="model.rateSystem.Comment"/>
+        <mapping class="model.rateSystem.Score"/>
+        <mapping class="model.reservation.Reservation"/>
+        <mapping class="model.reservation.Term"/>
+        <mapping class="model.reservation.TypeOfPayment"/>
+        <mapping class="model.user.Owner"/>
+        <mapping class="model.user.User"/>
+        <mapping class="model.rateSystem.Rate"/>
     </session-factory>
 </hibernate-configuration>
