@@ -11,7 +11,6 @@ import java.util.List;
 public interface IPlaceRepository extends IRepository<Place> {
 
     Place withName(String name);
-    List<Place> inCity(City city);
     List<Place> atStreet(String street);
     List<Place> withAmenities(PlaceAmenities placeAmenities);
     List<Place> isType(PlaceType placeType);

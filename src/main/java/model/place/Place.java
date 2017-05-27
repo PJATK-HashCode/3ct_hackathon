@@ -13,9 +13,9 @@ import java.util.List;
  */
 @Entity
 @NamedQueries({
-        @NamedQuery(name = "place.all", query = "select p from place p"),
-        @NamedQuery(name = "place.id", query = "select p from place p where p.id=:id"),
-        @NamedQuery(name = "place.city", query ="select p from place p where  p.city=:city")
+        @NamedQuery(name = "place.all", query = "select p from Place p"),
+        @NamedQuery(name = "place.id", query = "select p from Place p where p.id=:id"),
+        @NamedQuery(name = "place.city", query ="select p from Place p where  p.city=:city")
 })
 public class Place {
 
