@@ -1,4 +1,4 @@
-package model;
+package model.User;
 
 import lombok.Data;
 
@@ -6,7 +6,7 @@ import lombok.Data;
  * Created by Kuba on 27.05.2017.
  */
 @Data
-public class user {
+public class User {
 
     private int id;
     private String password;
