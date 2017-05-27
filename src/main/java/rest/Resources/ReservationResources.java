@@ -1,6 +1,7 @@
 package rest.Resources;
 
-import model.rateSystem.Rate;
+import model.place.Place;
+import model.reservation.Reservation;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -16,8 +17,8 @@ import java.util.List;
  * Created by Kuba on 27.05.2017.
  */
 @XmlRootElement
-@Path("/rate")
-public class RateResources {
+@Path("/reservation")
+public class ReservationResources {
 
     @PersistenceContext
     private EntityManager entityManager;
@@ -26,33 +27,35 @@ public class RateResources {
     @GET
     @Consumes((MediaType.APPLICATION_JSON))
     public Response getAll() {
-        List<Rate> placeList = new ArrayList<>();
-        placeList.addAll(entityManager.createNamedQuery("rate.all", Rate.class)
+        List<Reservation> reservationList = new ArrayList<>();
+        reservationList.addAll(entityManager.createNamedQuery("reservation.all", Reservation.class)
                 .getResultList());
 
-        return Response.ok(new GenericEntity<List<Rate>>(placeList){}).build();
+        return Response.ok(new GenericEntity<List<Reservation>>(reservationList) {
+        }).build();
     }
 
     @GET
     @Path("/{id}")
     @Consumes((MediaType.APPLICATION_JSON))
     public Response get(@PathParam("id") int id) {
-        Rate result = entityManager.createNamedQuery("rate.id", Rate.class)
-                .setParameter("id",id)
+        Place result = entityManager.createNamedQuery("reservation.id", Place.class)
+                .setParameter("id", id)
                 .getSingleResult();
-        if (result == null){
+        if (result == null) {
             return Response.status(404).build();
         }
         return Response.ok(result).build();
     }
+
     @GET
-    @Path("/category/{category}")
+    @Path("/user/{user}")
     @Consumes((MediaType.APPLICATION_JSON))
-    public Response get(@PathParam("category") String category) {
-        Rate result = entityManager.createNamedQuery("rate.category", Rate.class)
-                .setParameter("category",category)
+    public Response get(@PathParam("user") String user) {
+        Place result = entityManager.createNamedQuery("reservation.user", Place.class)
+                .setParameter("user", user)
                 .getSingleResult();
-        if (result == null){
+        if (result == null) {
             return Response.status(404).build();
         }
         return Response.ok(result).build();
@@ -61,22 +64,22 @@ public class RateResources {
 
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response Add(Rate rate){
-        entityManager.persist(rate);
-        return Response.ok(rate.getId()).build();
+    public Response Add(Reservation reservation) {
+        entityManager.persist(reservation);
+        return Response.ok(reservation.getId()).build();
     }
 
 
     @PUT
     @Path("/{id}")
     @Consumes(MediaType.APPLICATION_JSON)
-    public Response update(@PathParam("id") int id, Rate p){
-        Rate result = entityManager.createNamedQuery("rate.id",Rate.class)
+    public Response update(@PathParam("id") int id, Reservation r) {
+        Reservation result = entityManager.createNamedQuery("reservation.id", Reservation.class)
                 .setParameter("id", id).getSingleResult();
-        if (result==null){
+        if (result == null) {
             return Response.status(404).build();
 
-        }//TODO USTAWIC SETY
+        }
 
         return Response.ok(result).build();
     }
@@ -84,11 +87,11 @@ public class RateResources {
 
     @DELETE
     @Path("/{id}")
-    public Response delete(@PathParam("id") int id ){
-        Rate result = entityManager.createNamedQuery("rate.id",Rate.class)
-                .setParameter("id",id)
+    public Response delete(@PathParam("id") int id) {
+        Reservation result = entityManager.createNamedQuery("reservation.id", Reservation.class)
+                .setParameter("id", id)
                 .getSingleResult();
-        if (result==null) return Response.status(404).build();
+        if (result == null) return Response.status(404).build();
 
         entityManager.remove(result);
         return Response.ok().build();
