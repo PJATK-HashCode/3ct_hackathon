@@ -16,6 +16,7 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
+    private int level = 0;
     private String password;
     private String name;
     private String surname;
@@ -66,6 +67,10 @@ public class User {
 
     public String getEmail() {
         return email;
+    }
+
+    public int getLevel() {
+        return level;
     }
 
     public void setEmail(String email) {
