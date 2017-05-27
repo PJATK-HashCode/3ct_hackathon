@@ -6,10 +6,7 @@ import org.dozer.Mapper;
 
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
+import javax.ws.rs.*;
 import javax.ws.rs.core.GenericEntity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
@@ -23,7 +20,6 @@ import java.util.List;
 @XmlRootElement
 @Path("/place")
 public class PlaceResources {
-    Mapper mapper = new DozerBeanMapper();
 
     @PersistenceContext
     private EntityManager entityManager;
@@ -50,8 +46,62 @@ public class PlaceResources {
             return Response.status(404).build();
         }
         return Response.ok(result).build();
+    }
+    @GET
+    @Path("/city/{city}")
+    @Consumes((MediaType.APPLICATION_JSON))
+    public Response get(@PathParam("city") String city) {
+        Place result = entityManager.createNamedQuery("place.city", Place.class)
+                .setParameter("city",city)
+                .getSingleResult();
+        if (result == null){
+            return Response.status(404).build();
+        }
+        return Response.ok(result).build();
+    }
 
 
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response Add(Place place){
+        entityManager.persist(place);
+        return Response.ok(place.getId()).build();
+    }
+
+
+    @PUT
+    @Path("/{id}")
+    @Consumes(MediaType.APPLICATION_JSON)
+    public Response update(@PathParam("id") int id, Place p){
+        Place result = entityManager.createNamedQuery("place.id",Place.class)
+                .setParameter("id", id).getSingleResult();
+        if (result==null){
+            return Response.status(404).build();
+
+        }
+        result.setName(p.getName());
+        result.setCost(p.getCost());
+        result.setCity(p.getCity());
+        result.setOwner(p.getOwner());
+        result.setPlaceAmenities(p.getPlaceAmenities());
+        result.setRateList(p.getRateList());
+        result.setPlaceType(p.getPlaceType());
+        result.setTypeOfSportList(p.getTypeOfSportList());
+
+        return Response.ok(result).build();
+    }
+
+
+    @DELETE
+    @Path("/{id}")
+    public Response delete(@PathParam("id") int id ){
+        Place result = entityManager.createNamedQuery("place.id",Place.class)
+                .setParameter("id",id)
+                .getSingleResult();
+        if (result==null) return Response.status(404).build();
+
+        entityManager.remove(result);
+        return Response.ok().build();
     }
 
 }
