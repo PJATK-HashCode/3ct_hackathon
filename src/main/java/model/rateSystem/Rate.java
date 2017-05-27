@@ -7,6 +7,12 @@ import javax.persistence.*;
  * Created by Kuba on 27.05.2017.
  */
 @Entity
+@NamedQueries({
+        @NamedQuery(name = "rate.all", query = "SELECT r FROM Rate r"),
+        @NamedQuery(name = "rate.id", query = "SELECT r FROM Rate r WHERE r.id=:id"),
+        @NamedQuery(name = "rate.category", query ="select r from rate r where  r.category=:category")
+
+})
 public class Rate {
 
     @Id
@@ -20,7 +26,7 @@ public class Rate {
     private User user;
 
     @Enumerated(EnumType.STRING)
-    private Category Category;
+    private Category category;
 
 
     public long getId() {
@@ -48,10 +54,10 @@ public class Rate {
     }
 
     public model.rateSystem.Category getCategory() {
-        return Category;
+        return category;
     }
 
     public void setCategory(model.rateSystem.Category category) {
-        Category = category;
+        this.category = category;
     }
 }
