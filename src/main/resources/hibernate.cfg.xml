@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.dialect">
+            org.hibernate.dialect.HSQLDialect
+        </property>
+        <property name="connection.url">jdbc:hsqldb:hsql://localhost/workdb</property>
+        <property name="connection.driver_class">org.hsqldb.jdbcDriver</property>
+        <property name="connection.username">SA</property>
+        <property name="connection.password"/>
+        <property name="connection.default_schema">PUBLIC</property>
+        <property name="show_sql">true</property>
+        <property name="hbm2ddl.auto">update</property>
+        <!-- DB schema will be updated if needed -->
+        <mapping class="model.place.City"/>
+        <mapping class="model.place.Place"/>
+        <mapping class="model.place.PlaceAmenities"/>
+        <mapping class="model.place.PlaceType"/>
+        <mapping class="model.place.TypeOfSport"/>
+        <mapping class="model.RateSystem.Category"/>
+        <mapping class="model.RateSystem.Comment"/>
+        <mapping class="model.RateSystem.Rate"/>
+        <mapping class="model.RateSystem.Score"/>
+        <mapping class="model.Reservation.Reservation"/>
+        <mapping class="model.Reservation.Term"/>
+        <mapping class="model.Reservation.TypeOfPayment"/>
+        <mapping class="model.User.Owner"/>
+        <mapping class="model.User.User"/>
+    </session-factory>
+</hibernate-configuration>
