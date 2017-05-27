@@ -2,6 +2,7 @@ package web;
 
 import dao.service.RepositoryService;
 import model.user.User;
+import security.Encryptor;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -11,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import javax.transaction.Transactional;
 import java.io.IOException;
+import java.security.NoSuchAlgorithmException;
 import java.util.List;
 
 /**
@@ -40,7 +42,16 @@ public class RegisterServlet extends HttpServlet {
     }
 
     private void addUser(User user, HttpServletResponse resp) throws IOException {
-        repositoryService.users().add(user);
+        String pass = user.getPassword();
+        try {
+            user.setPassword(Encryptor.get_SHA_256_SecurePassword(pass, Encryptor.getSalt()));
+        } catch (NoSuchAlgorithmException e) {
+            e.printStackTrace();
+            user.setPassword(null);
+        }
+        if (user.getPassword() != null) {
+            repositoryService.users().add(user);
+        }
         resp.sendRedirect("/index.html");
     }
 }
