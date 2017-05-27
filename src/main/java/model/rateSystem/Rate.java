@@ -10,7 +10,7 @@ import javax.persistence.*;
 @NamedQueries({
         @NamedQuery(name = "rate.all", query = "SELECT r FROM Rate r"),
         @NamedQuery(name = "rate.id", query = "SELECT r FROM Rate r WHERE r.id=:id"),
-        @NamedQuery(name = "rate.category", query ="select r from rate r where  r.category=:category")
+        @NamedQuery(name = "rate.category", query ="select r from Rate r where  r.category=:category")
 
 })
 public class Rate {

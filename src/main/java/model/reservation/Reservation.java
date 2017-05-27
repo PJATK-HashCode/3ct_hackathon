@@ -9,6 +9,11 @@ import javax.persistence.*;
  * Created by Kuba on 27.05.2017.
  */
 @Entity
+@NamedQueries({
+        @NamedQuery(name = "reservation.all", query = "select r from Reservation r"),
+        @NamedQuery(name = "reservation.id", query = "select r from Reservation r where r.id=:id"),
+        @NamedQuery(name = "reservation.user", query ="select r from Reservation r where  r.user=:user")
+})
 public class Reservation {
 
     @Id
