@@ -14,6 +14,10 @@ import java.util.List;
  */
 @Entity
 @Data
+@NamedQueries({
+        @NamedQuery(name = "place.all", query="select p from place p"),
+        @NamedQuery(name = "place.id", query = "select p from place p where p.id=:placeId")
+})
 public class Place {
 
     @Id
