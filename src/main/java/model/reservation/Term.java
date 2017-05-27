@@ -1,6 +1,5 @@
 package model.reservation;
 
-import lombok.Data;
 import org.joda.time.LocalTime;
 
 import javax.persistence.Entity;
@@ -13,7 +12,6 @@ import javax.persistence.Id;
  */
 
 @Entity
-@Data
 public class Term {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -21,4 +19,29 @@ public class Term {
 
     private Boolean IsTaken;
     private LocalTime dateTime;
+
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public Boolean getTaken() {
+        return IsTaken;
+    }
+
+    public void setTaken(Boolean taken) {
+        IsTaken = taken;
+    }
+
+    public LocalTime getDateTime() {
+        return dateTime;
+    }
+
+    public void setDateTime(LocalTime dateTime) {
+        this.dateTime = dateTime;
+    }
 }

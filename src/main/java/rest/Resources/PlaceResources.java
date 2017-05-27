@@ -4,7 +4,6 @@ import model.place.Place;
 import org.dozer.DozerBeanMapper;
 import org.dozer.Mapper;
 
-import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.ws.rs.Consumes;
@@ -21,7 +20,7 @@ import java.util.List;
  * Created by Kuba on 27.05.2017.
  */
 @XmlRootElement
-@Path("/places")
+@Path("/place")
 public class PlaceResources {
     Mapper mapper = new DozerBeanMapper();
 
