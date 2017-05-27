@@ -13,8 +13,8 @@ import java.io.IOException;
 /**
  * @author Lelental on 27.05.2017.
  */
-@WebServlet("/UserServlet")
-public class UserServlet extends HttpServlet {
+@WebServlet("/LoginServlet")
+public class LoginServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
@@ -26,7 +26,7 @@ public class UserServlet extends HttpServlet {
         if (repositoryService.users().withNick(nick) != null) {
             HttpSession session = req.getSession();
             session.setAttribute(SessionKey.login, repositoryService.users().withNick(nick));
-            resp.sendRedirect("/index.jsp");
+            resp.sendRedirect("/place.jsp");
         } else {
             resp.getWriter().println("Zjebałes, nie elo");
         }

@@ -16,7 +16,7 @@ public class Owner {
     private long id;
 
     private String name;
-    private String Email;
+    private String email;
     private String phoneNumber;
 
 
@@ -37,11 +37,11 @@ public class Owner {
     }
 
     public String getEmail() {
-        return Email;
+        return email;
     }
 
     public void setEmail(String email) {
-        Email = email;
+        this.email = email;
     }
 
     public String getPhoneNumber() {

@@ -26,4 +26,9 @@ public class RepositoryService implements IRepositoryCatalog {
     public IUserRepository users() {
         return new UserService();
     }
+
+    @Override
+    public IOwnerRepository owners() {
+        return new OwnerService();
+    }
 }

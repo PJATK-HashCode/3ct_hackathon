@@ -9,4 +9,5 @@ public interface IRepositoryCatalog {
     IRateRepository rates();
     IReservationRepository reservations();
     IUserRepository users();
+    IOwnerRepository owners();
 }

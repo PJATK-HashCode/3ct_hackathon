@@ -14,8 +14,8 @@ public class PlaceAmenities {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private boolean hasOwner;
-    private boolean hasChaningRoom;
+    private boolean hasShower;
+    private boolean hasChangingRoom;
     private boolean hasLightOutSide;
     private boolean hasFreeWater;
 
@@ -28,20 +28,20 @@ public class PlaceAmenities {
         this.id = id;
     }
 
-    public boolean isHasOwner() {
-        return hasOwner;
+    public boolean isHasShower() {
+        return hasShower;
     }
 
-    public void setHasOwner(boolean hasOwner) {
-        this.hasOwner = hasOwner;
+    public void setHasShower(boolean hasOwner) {
+        this.hasShower = hasOwner;
     }
 
-    public boolean isHasChaningRoom() {
-        return hasChaningRoom;
+    public boolean isHasChangingRoom() {
+        return hasChangingRoom;
     }
 
-    public void setHasChaningRoom(boolean hasChaningRoom) {
-        this.hasChaningRoom = hasChaningRoom;
+    public void setHasChangingRoom(boolean hasChaningRoom) {
+        this.hasChangingRoom = hasChaningRoom;
     }
 
     public boolean isHasLightOutSide() {

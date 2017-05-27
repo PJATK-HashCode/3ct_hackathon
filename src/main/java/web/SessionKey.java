@@ -6,4 +6,7 @@ package web;
 public class SessionKey {
 
     public static final String login = "login";
+    public static final String owner = "owner";
+    public static final String user = "user";
+
 }
