@@ -54,14 +54,7 @@
         .credit-card-box .panel-heading img {
             min-width: 180px;
         }
-        .element {
-            margin-top: 5px;
-            margin-left: 10px;
-            padding-top: 10px;
-            width: 34px;
-            padding-bottom: 10px;
-            height: 34px;
-        }
+
     </style>
 </head>
 <body>
@@ -167,7 +160,6 @@
                         <div class="row">
                             <div class="col-xs-12">
                                 <button class="subscribe btn btn-success btn-lg btn-block" type="button">Zapłać</button>
-                                <a href="index.jsp" data-original-title="Anuluj" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger element" style="padding-top: 8px;"><i class="glyphicon glyphicon-remove"></i></a>
                             </div>
                         </div>
                         <div class="row" style="display:none;">
