@@ -26,9 +26,17 @@ public class RegisterServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        HttpSession session = req.getSession();
-        User user = (User) session.getAttribute("user");
+
+        User user = new User();
+        user.setName(req.getParameter("firstName"));
+        user.setSurname(req.getParameter("lastName"));
+        user.setNickname(req.getParameter("nick"));
+        user.setPassword(req.getParameter("password"));
+        user.setEmail(req.getParameter("email"));
+        user.setPhoneNumber(req.getParameter("phone"));
+
         List<User> users = repositoryService.users().getAll("User");
+
         if (users.isEmpty()) {
             addUser(user, resp);
         }
