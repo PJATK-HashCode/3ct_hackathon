@@ -39,7 +39,7 @@ public class LoginServlet extends HttpServlet {
                     session.setAttribute(SessionKey.login, userDao.getById(u.getId()));
                     resp.sendRedirect("index.jsp");
                 } else {
-                    resp.getWriter().println("Zjebałes, nie elo");
+                    resp.getWriter().println("Błąd logowania");
                 }
             }
 
