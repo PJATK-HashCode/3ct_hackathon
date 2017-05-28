@@ -4,10 +4,16 @@
         "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
 <hibernate-configuration>
     <session-factory>
-        <property name="hibernate.dialect">
-            org.hibernate.dialect.HSQLDialect
-        </property>
-        <property name="connection.url">jdbc:hsqldb:hsql://localhost/</property>
+
+
+        <!-- JDBC connection pool (use the built-in) -->
+        <property name="connection.pool_size">1</property>
+
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.HSQLDialect</property>
+
+
+        <property name="connection.url">jdbc:hsqldb:hsql://localhost/workdb</property>
         <property name="connection.driver_class">org.hsqldb.jdbcDriver</property>
         <property name="connection.username">SA</property>
         <property name="connection.password"/>
@@ -29,5 +35,6 @@
         <mapping class="model.user.Owner"/>
         <mapping class="model.user.User"/>
         <mapping class="model.rateSystem.Rate"/>
+
     </session-factory>
 </hibernate-configuration>

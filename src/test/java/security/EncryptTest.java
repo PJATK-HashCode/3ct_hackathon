@@ -7,9 +7,6 @@ import java.security.NoSuchAlgorithmException;
 
 import static org.junit.Assert.*;
 
-/**
- * @author Lelental on 27.05.2017.
- */
 public class EncryptTest {
 
     @Test

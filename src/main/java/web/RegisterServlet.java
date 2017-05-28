@@ -1,6 +1,7 @@
 package web;
 
 import dao.service.RepositoryService;
+import daoSzeryfa.hdao.impl.UserDao;
 import model.user.User;
 import org.apache.commons.codec.digest.DigestUtils;
 
@@ -35,23 +36,19 @@ public class RegisterServlet extends HttpServlet {
         user.setEmail(req.getParameter("email"));
         user.setPhoneNumber(req.getParameter("phone"));
 
-        List<User> users = repositoryService.users().getAll("User");
+        String pass = user.getPassword();
+        user.setPassword(DigestUtils.sha1Hex(pass));
 
-        if (users.isEmpty()) {
-            addUser(user, resp);
-        }
-        if (repositoryService.users().withNick(user.getNickname()) != null) {
-            resp.getWriter().write("Podana nazwa juz jest zajeta");
-        } else {
-            addUser(user, resp);
-        }
+        UserDao userDao = new UserDao();
+        userDao.create(user);
+
+        resp.sendRedirect("index.jsp");
 
     }
 
     private void addUser(User user, HttpServletResponse resp) throws IOException {
-        String pass = user.getPassword();
-        user.setPassword(DigestUtils.sha1Hex(pass));
-        repositoryService.users().add(user);
-        resp.sendRedirect("index.jsp");
+       /* String pass = user.getPassword();
+        user.setPassword(DigestUtils.sha1Hex(pass));*/
+
     }
 }
