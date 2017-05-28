@@ -41,7 +41,7 @@
 
     $(window).ready(function(){
 
-        $.get("header.html", function(fileData){
+        $.get("header.jsp", function(fileData){
             $('header').html(fileData);
         });
 

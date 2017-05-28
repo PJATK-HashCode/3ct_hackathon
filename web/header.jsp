@@ -64,14 +64,14 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="index.html">Strona główna</a></li>
-                <li><a href="addNewPlace.html">Dodaj placówke</a></li>
-                <li><a href="adminPanel.html">Panel Admina (hidden)</a></li>
+                <li class="active"><a href="index.jsp">Strona główna</a></li>
+                <li><a href="addNewPlace.jsp">Dodaj placówke</a></li>
+                <li><a href="adminPanel.jsp">Panel Admina (hidden)</a></li>
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
                 <li><a onclick="document.getElementById('id01').style.display='block'""><span onclick="document.getElementById('id01').style.display='block'" class="glyphicon glyphicon-user"></span> Zaloguj</a></li>
-                <li><a href="register.html"><span class="glyphicon glyphicon-user"></span> Zarejestruj</a></li>
+                <li><a href="register.jsp"><span class="glyphicon glyphicon-user"></span> Zarejestruj</a></li>
             </ul>
             <form class="navbar-form navbar-right" role="search">
                 <div class="form-group input-group">

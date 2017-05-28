@@ -88,7 +88,7 @@
 
     $(window).ready(function(){
 
-        $.get("header.html", function(fileData){
+        $.get("header.jsp", function(fileData){
             $('header').html(fileData);
         });
 
@@ -141,14 +141,14 @@
                                 </tbody>
                             </table>
 
-                            <a href="payment.html" class="btn btn-primary">Przejdź do płatności</a>
+                            <a href="payment.jsp" class="btn btn-primary">Przejdź do płatności</a>
                         </div>
                     </div>
                 </div>
                 <div class="panel-footer">
                     <a data-original-title="Kontakt" data-toggle="tooltip" type="button" class="btn btn-sm btn-primary"><i class="glyphicon glyphicon-envelope"></i></a>
                     <span class="pull-right">
-                            <a href="index.html" data-original-title="Anuluj" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
+                            <a href="index.jsp" data-original-title="Anuluj" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i></a>
                         </span>
                 </div>
 

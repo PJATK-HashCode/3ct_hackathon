@@ -32,7 +32,7 @@
 
     $(window).ready(function(){
 
-        $.get("header.html", function(fileData){
+        $.get("header.jsp", function(fileData){
             $('header').html(fileData);
         });
 
@@ -136,7 +136,7 @@
 
             <div class="col-sm-offset-2 col-sm-10">
                 <button type="submit" class="btn btn-default" style="width: 100px">Zgłoś</button>
-                <a href="index.html" data-original-title="Anuluj" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger element" style="padding-top: 8px;"><i class="glyphicon glyphicon-remove"></i></a>
+                <a href="index.jsp" data-original-title="Anuluj" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger element" style="padding-top: 8px;"><i class="glyphicon glyphicon-remove"></i></a>
             </div>
         </div>
     </form>

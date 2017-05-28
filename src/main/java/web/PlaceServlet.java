@@ -43,6 +43,6 @@ public class PlaceServlet extends HttpServlet {
     private void addPlace(Place place, Owner owner, HttpServletResponse resp) throws ServletException, IOException {
         repositoryService.owners().add(owner);
         repositoryService.places().add(place);
-        resp.sendRedirect("/index.html");
+        resp.sendRedirect("/index.jsp");
     }
 }

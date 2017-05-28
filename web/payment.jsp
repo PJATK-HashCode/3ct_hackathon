@@ -71,7 +71,7 @@
 
     $(window).ready(function(){
 
-        $.get("header.html", function(fileData){
+        $.get("header.jsp", function(fileData){
             $('header').html(fileData);
         });
 
@@ -166,7 +166,7 @@
                         <div class="row">
                             <div class="col-xs-12">
                                 <button class="subscribe btn btn-success btn-lg btn-block" type="button">Zapłać</button>
-                                <a href="index.html" data-original-title="Anuluj" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger element" style="padding-top: 8px;"><i class="glyphicon glyphicon-remove"></i></a>
+                                <a href="index.jsp" data-original-title="Anuluj" data-toggle="tooltip" type="button" class="btn btn-sm btn-danger element" style="padding-top: 8px;"><i class="glyphicon glyphicon-remove"></i></a>
                             </div>
                         </div>
                         <div class="row" style="display:none;">
