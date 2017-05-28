@@ -13,8 +13,10 @@ import java.io.IOException;
 ;
 
 /**
+/*
  * @author Lelental on 27.05.2017.
- */
+ *//*
+
 @WebFilter(urlPatterns = "/addNewPlace.jsp")
 public class NewPlaceFilter implements Filter {
 
@@ -40,3 +42,4 @@ public class NewPlaceFilter implements Filter {
 
     }
 }
+*/

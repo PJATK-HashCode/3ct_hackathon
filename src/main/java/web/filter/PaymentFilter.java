@@ -13,7 +13,7 @@ import java.io.IOException;
 /**
  * @author Lelental on 27.05.2017.
  */
-@WebFilter(urlPatterns = ("/payment.jsp"))
+/*@WebFilter(urlPatterns = ("/payment.jsp"))
 public class PaymentFilter implements Filter {
 
     @Override
@@ -22,9 +22,9 @@ public class PaymentFilter implements Filter {
         HttpSession session = httpServletRequest.getSession();
         User user = (User) session.getAttribute(SessionKey.login);
         if (user == null) {
-            ((HttpServletResponse) servletResponse).sendRedirect("login.jsp");
+            ((HttpServletResponse) servletResponse).sendRedirect("login.html");
         } else if (user.getLevel() != 1) {
-            ((HttpServletResponse) servletResponse).sendRedirect("login.jsp");
+            ((HttpServletResponse) servletResponse).sendRedirect("login.html");
         } else {
             filterChain.doFilter(servletRequest, servletResponse);
         }
@@ -39,4 +39,4 @@ public class PaymentFilter implements Filter {
     public void destroy() {
 
     }
-}
+}*/
