@@ -14,9 +14,8 @@ import java.io.IOException;
 import java.security.NoSuchAlgorithmException;
 import java.util.Objects;
 
-/**
- * @author Lelental on 27.05.2017.
- */
+
+
 @WebServlet("/LoginServlet")
 public class LoginServlet extends HttpServlet {
 
@@ -32,7 +31,7 @@ public class LoginServlet extends HttpServlet {
         if (user != null && Objects.equals(user.getPassword(), DigestUtils.sha1Hex(password))) {
             HttpSession session = req.getSession();
             session.setAttribute(SessionKey.login, repositoryService.users().withNick(nick));
-            resp.sendRedirect("/place.jsp");
+            resp.sendRedirect("place.html");
         } else {
             resp.getWriter().println("Zjebałes, nie elo");
         }

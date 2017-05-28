@@ -1,11 +1,11 @@
 package model.reservation;
 
-import org.joda.time.LocalTime;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import java.util.Date;
 
 /**
  * Created by Kuba on 27.05.2017.
@@ -18,7 +18,7 @@ public class Term {
     private long id;
 
     private Boolean IsTaken;
-    private LocalTime dateTime;
+    private String dateTime;
 
 
     public long getId() {
@@ -37,11 +37,11 @@ public class Term {
         IsTaken = taken;
     }
 
-    public LocalTime getDateTime() {
+    public String getDateTime() {
         return dateTime;
     }
 
-    public void setDateTime(LocalTime dateTime) {
+    public void setDateTime(String dateTime) {
         this.dateTime = dateTime;
     }
 }

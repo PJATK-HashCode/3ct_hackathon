@@ -44,6 +44,6 @@ public class RegisterServlet extends HttpServlet {
         String pass = user.getPassword();
         user.setPassword(DigestUtils.sha1Hex(pass));
         repositoryService.users().add(user);
-        resp.sendRedirect("/index.html");
+        resp.sendRedirect("index.html");
     }
 }

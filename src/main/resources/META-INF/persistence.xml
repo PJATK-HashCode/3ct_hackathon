@@ -7,7 +7,9 @@
 
     <persistence-unit name="demoPU">
 
-        <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
+
+
+        <provider>org.eclipse.persistence.jpa.PersistenceProvider</provider>
 
         <jta-data-source>jdbc/demoapps</jta-data-source>
 

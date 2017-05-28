@@ -15,7 +15,7 @@ import java.io.IOException;
 /**
  * @author Lelental on 27.05.2017.
  */
-@WebFilter(urlPatterns = "AddNewPlace.jsp")
+@WebFilter(urlPatterns = "/addNewPlace.html")
 public class NewPlaceFilter implements Filter {
 
     @Override
@@ -27,8 +27,8 @@ public class NewPlaceFilter implements Filter {
         HttpServletRequest httpServletRequest = (HttpServletRequest) servletRequest;
         HttpSession session = httpServletRequest.getSession();
         User user = (User) session.getAttribute(SessionKey.login);
-        if (user == null && user.getLevel() == 0) {
-            ((HttpServletResponse) servletResponse).sendRedirect("/index.jsp");
+        if (user == null) {
+            ((HttpServletResponse) servletResponse).sendRedirect("index.html");
         }else{
             filterChain.doFilter(servletRequest,servletResponse);
         }
