@@ -108,7 +108,7 @@
 
             <div class="panel panel-info">
                 <div class="panel-heading">
-                    <h3 class="panel-title">NAZWA</h3>
+                    <h3 class="panel-title">Orlik Zaspa</h3>
                 </div>
                 <div class="panel-body">
                     <div class="row">
@@ -119,20 +119,20 @@
                                 <tbody>
                                 <tr>
                                     <td>Nazwa obiektu:</td>
-                                    <td>TODO</td>
+                                    <td>Orlik Zaspa</td>
                                 </tr>
                                 <tr>
                                     <td>Adres obiektu:</td>
                                     <td>
-                                    TODO - ulica
+                                    Wyzwolenia 42
                                     <br><br>
-                                    TODO - kod
+                                    80-516
                                     <br><br>
-                                    TODO - miasto</td>
+                                    Gdańsk</td>
                                 </tr>
                                 <tr>
                                     <td>Właściciel</td>
-                                    <td>TODO</td>
+                                    <td>Andrzej</td>
                                 </tr>
                                 <tr>
                                     <td>Kontakt</td>
