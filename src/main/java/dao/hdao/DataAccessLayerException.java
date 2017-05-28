@@ -1,4 +1,4 @@
-package daoSzeryfa.hdao;
+package dao.hdao;
 
 /**
  * Created by Kuba on 2017-01-30.

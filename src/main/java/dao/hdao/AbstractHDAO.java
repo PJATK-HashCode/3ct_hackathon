@@ -1,16 +1,17 @@
-package daoSzeryfa.hdao;
+package dao.hdao;
 
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
  * Created by Kuba on 2017-01-30.
  */
-public abstract class AbstractHDAO {
+public abstract class AbstractHDAO<Entity> {
     private Session session;
     private Transaction transaction;
 
@@ -60,6 +61,7 @@ public abstract class AbstractHDAO {
             delete(entity);
         }
     }
+
 
 
     protected List getAll(Class klass) {

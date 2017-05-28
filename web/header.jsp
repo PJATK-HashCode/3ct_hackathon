@@ -1,5 +1,4 @@
 
-<%@ page contentType="text/html;charset=UTF-8" language="java" %><!DOCTYPE html>
 <html lang="en">
 <head>
     <title>No Podaj Podaj</title>
@@ -71,7 +70,7 @@
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
-                <li><a onclick="document.getElementById('id01').style.display='block'""><span onclick="document.getElementById('id01').style.display='block'" class="glyphicon glyphicon-user"></span> Zaloguj</a></li>
+                <li><a onclick="document.getElementById('id01').style.display='block'"><span onclick="document.getElementById('id01').style.display='block'" class="glyphicon glyphicon-user"></span> Zaloguj</a></li>
                 <li><a href="register.jsp"><span class="glyphicon glyphicon-user"></span> Zarejestruj</a></li>
             </ul>
             <form class="navbar-form navbar-right" role="search">

@@ -1,8 +1,10 @@
-package daoSzeryfa.hdao.impl;
+package dao.hdao.impl;
 
-import daoSzeryfa.hdao.AbstractHDAO;
-import daoSzeryfa.hdao.DataAccessLayerException;
+import dao.hdao.AbstractHDAO;
+import dao.hdao.DataAccessLayerException;
+import dao.hdao.HibernateFactory;
 import model.user.User;
+import org.hibernate.HibernateException;
 
 
 import java.util.List;
@@ -21,8 +23,6 @@ public class UserDao extends AbstractHDAO {
     public void delete(User user) throws DataAccessLayerException {
         super.delete(user);
     }
-
-
 
     public User getById(int id) {
         return (User) super.getById(User.class,id);

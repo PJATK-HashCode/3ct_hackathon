@@ -22,9 +22,9 @@ public class PaymentFilter implements Filter {
         HttpSession session = httpServletRequest.getSession();
         User user = (User) session.getAttribute(SessionKey.login);
         if (user == null) {
-            ((HttpServletResponse) servletResponse).sendRedirect("login.jsp");
+            ((HttpServletResponse) servletResponse).sendRedirect("login.html");
         } else if (user.getLevel() != 1) {
-            ((HttpServletResponse) servletResponse).sendRedirect("login.jsp");
+            ((HttpServletResponse) servletResponse).sendRedirect("login.html");
         } else {
             filterChain.doFilter(servletRequest, servletResponse);
         }

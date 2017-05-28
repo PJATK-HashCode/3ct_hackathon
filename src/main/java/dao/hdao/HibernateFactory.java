@@ -1,4 +1,4 @@
-package daoSzeryfa.hdao;
+package dao.hdao;
 
 
 
