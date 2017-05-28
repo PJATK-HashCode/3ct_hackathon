@@ -176,16 +176,24 @@
         </div>
 
         <div class="col-xs-12 col-md-8" style="font-size: 12pt; line-height: 2em;">
-            <p><h1>Jakieś info:</h1>
+            <p><h1>Twoja rezerwacja:</h1>
             <ul>
-                <li>Lorem ipsum dolor sit amet</li>
-                <li>consectetur adipiscing elit,</li>
-                <li>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</li>
-                <li>Ut enim ad minim veniam, </li>
-                <li>quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </li>
+                <li>Nazwa Obiektu: Orlik Zaspat</li>
+                <li>Adres obiektu:
+                    <br>
+                    Wyzwolenia 42
+                    <br>
+                    80-516
+                    <br>
+                    Gdańsk,</li>
+                <li>Właściciel: Andrzej</li>
+                <li>Kantakt:
+                    info@support.com
+                <br>
+                    555-223-355
+                </li>
             </ul>
             </p>
-            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse.</p>
 
         </div>
 
